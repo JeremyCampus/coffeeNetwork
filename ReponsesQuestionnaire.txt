@@ -1,0 +1,16 @@
+Question : Rappeler ce qu'est npm et pourquoi nous utilisons l'option --global ?
+Global car on veut que cela fonctionne quel que soit le dossier actuel.
+Question : Quels sont les bons r�flexes � avoir quand vous t�l�chargez un nouveau projet ? Quels fichiers regarder en priorit� ?
+Readme et le dossier src
+Question : Si vous regardez le fichier README.md du projet vous voyez que trois commandes sont indiqu�es, quel est le but de chacune ?
+npm install
+installer les d�pendances
+
+npm run dev
+recharge la localhost:8080 a chaque changement de fichier
+
+npm run build
+Pour utiliser la derni�re version du code source de Vue sur GitHub
+
+Une fois que tout fonctionne faites un premier commit ( vous aurez surement besoin d'initialiser le repository git ). Quelle est la commande � utiliser ? 
+git commit -m "Premier Push"

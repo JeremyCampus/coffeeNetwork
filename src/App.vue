@@ -1,30 +1,44 @@
 <template>
   <div id="app">
-    <img src="http://vuejs.org/images/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <img src="src/assets/logo.png" >
+    <h1>Que souhaitez vous faire ? </h1>
     <ul>
-      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
+      <li> <button v-on:click="onMachinesListClick" class="rectangleVert ">Consulter la liste des machines</button></li>
+      <li> <button v-on:click="onMapClick" class="rectangleVert ">Voir la carte</button></li>
     </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
-      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vueify" target="_blank">vueify</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
-    </ul>
+
+<machinelist>
+</machinelist>
+
+<machinemap>
+</machinemap>
+
+
   </div>
 </template>
 
 <script>
+
+import Machinelist from "./vues/MachinesList.vue"
+import Machinemap from "./vues/MachinesMap.vue"
+
 export default {
+  components:{
+    Machinelist,
+    Machinemap
+  },
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Yeay'
+    }
+  },
+  methods: {
+    onMachinesListClick: function (event) {
+      alert("L'utilisateur a cliqué sur onMachinesListClick")
+    },
+    onMapClick: function (event) {
+      alert("L'utilisateur a cliqué sur onMapClick")
     }
   }
 }
@@ -60,6 +74,39 @@ li {
 }
 
 a {
-  color: #42b983;
+  color: #ffffff;
+  text-decoration: none;
 }
+
+.rectangleVert{
+  background: #34d97b;
+  background-image: -webkit-linear-gradient(top, #34d97b, #20a876);
+  background-image: -moz-linear-gradient(top, #34d97b, #20a876);
+  background-image: -ms-linear-gradient(top, #34d97b, #20a876);
+  background-image: -o-linear-gradient(top, #34d97b, #20a876);
+  background-image: linear-gradient(to bottom, #34d97b, #20a876);
+  -webkit-border-radius: 7;
+  -moz-border-radius: 7;
+  border-radius: 7px;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.rectangleVert:hover{
+  background: #15ab62;
+  background-image: -webkit-linear-gradient(top, #15ab62, #28a65e);
+  background-image: -moz-linear-gradient(top, #15ab62, #28a65e);
+  background-image: -ms-linear-gradient(top, #15ab62, #28a65e);
+  background-image: -o-linear-gradient(top, #15ab62, #28a65e);
+  background-image: linear-gradient(to bottom, #15ab62, #28a65e);
+  text-decoration: none;
+
+}
+
+
+
+
 </style>
