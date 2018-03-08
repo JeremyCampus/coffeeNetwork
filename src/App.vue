@@ -7,33 +7,35 @@
     <ul class="enLigne">
       <li> <router-link to="/machinelist"><button v-on:click="onMachinesListClick" class="rectangleVert ">Consulter la liste des machines</button></router-link></li>
       <li><router-link to="/machinemap"> <button v-on:click="onMapClick" class="rectangleVert ">Voir la carte</button></router-link></li>
-      <li><router-link to="/machine"> <button v-on:click="onMapClick" class="rectangleVert ">Machines</button></router-link></li>
     </ul>
 
-      <router-view></router-view>
+      <router-view v-bind:machines="machines"></router-view>
 
 
   </div>
 </template>
 
 <script>
-
-import Machinelist from "./vues/MachinesList.vue";
-import Machinemap from "./vues/MachinesMap.vue";
-import Machine from "./vues/Machine.vue";
-
-
 export default {
-  components: {
-    Machinelist,
-    Machinemap,
-    Machine
-  },
   name: "app",
   data() {
     return {
+      machines: [
+        {
+          id:1,
+          name: 'What else ?',
+          status: false,
+          checkedAt: new Date()
+        },
+        {
+          id:2,
+          name: 'What blabla ?',
+          status: true,
+          checkedAt: new Date()
+        }
+      ],
       msg: "Yeay",
-    };
+    }
   },
   methods: {
     onMachinesListClick: function(event) {
