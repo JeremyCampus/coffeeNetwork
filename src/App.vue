@@ -1,17 +1,16 @@
 <template>
   <div id="app">
+    <h1>Coffee Network</h1>
     <img src="src/assets/logo.png" >
-    <h1>Que souhaitez vous faire ? </h1>
-    <ul>
-      <li> <button v-on:click="onMachinesListClick" class="rectangleVert ">Consulter la liste des machines</button></li>
-      <li> <button v-on:click="onMapClick" class="rectangleVert ">Voir la carte</button></li>
+    <h2>Que souhaitez vous faire ? </h2>
+    <h3> {{ msg }}</h3>
+    <ul class="enLigne">
+      <li> <router-link to="/machinelist"><button v-on:click="onMachinesListClick" class="rectangleVert ">Consulter la liste des machines</button></router-link></li>
+      <li><router-link to="/machinemap"> <button v-on:click="onMapClick" class="rectangleVert ">Voir la carte</button></router-link></li>
+      <li><router-link to="/machine"> <button v-on:click="onMapClick" class="rectangleVert ">Machines</button></router-link></li>
     </ul>
 
-<machinelist>
-</machinelist>
-
-<machinemap>
-</machinemap>
+      <router-view></router-view>
 
 
   </div>
@@ -19,34 +18,37 @@
 
 <script>
 
-import Machinelist from "./vues/MachinesList.vue"
-import Machinemap from "./vues/MachinesMap.vue"
+import Machinelist from "./vues/MachinesList.vue";
+import Machinemap from "./vues/MachinesMap.vue";
+import Machine from "./vues/Machine.vue";
+
 
 export default {
-  components:{
+  components: {
     Machinelist,
-    Machinemap
+    Machinemap,
+    Machine
   },
-  name: 'app',
-  data () {
+  name: "app",
+  data() {
     return {
-      msg: 'Yeay'
-    }
+      msg: "Yeay",
+    };
   },
   methods: {
-    onMachinesListClick: function (event) {
-      alert("L'utilisateur a cliqué sur onMachinesListClick")
+    onMachinesListClick: function(event) {
+      // alert("L'utilisateur a cliqué sur onMachinesListClick");
     },
-    onMapClick: function (event) {
-      alert("L'utilisateur a cliqué sur onMapClick")
+    onMapClick: function(event) {
+      // alert("L'utilisateur a cliqué sur onMapClick");
     }
   }
-}
+};
 </script>
 
 <style scoped>
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -59,7 +61,8 @@ img {
   height: 200px;
 }
 
-h1, h2 {
+h1,
+h2 {
   font-weight: normal;
 }
 
@@ -69,16 +72,20 @@ ul {
 }
 
 li {
-  display: inline-block;
   margin: 0 10px;
 }
+
+.enLigne{
+  display:inline-block;
+}
+
 
 a {
   color: #ffffff;
   text-decoration: none;
 }
 
-.rectangleVert{
+.rectangleVert {
   background: #34d97b;
   background-image: -webkit-linear-gradient(top, #34d97b, #20a876);
   background-image: -moz-linear-gradient(top, #34d97b, #20a876);
@@ -95,7 +102,7 @@ a {
   text-decoration: none;
 }
 
-.rectangleVert:hover{
+.rectangleVert:hover {
   background: #15ab62;
   background-image: -webkit-linear-gradient(top, #15ab62, #28a65e);
   background-image: -moz-linear-gradient(top, #15ab62, #28a65e);
@@ -103,10 +110,6 @@ a {
   background-image: -o-linear-gradient(top, #15ab62, #28a65e);
   background-image: linear-gradient(to bottom, #15ab62, #28a65e);
   text-decoration: none;
-
 }
-
-
-
 
 </style>
