@@ -2,8 +2,8 @@
   <div class="encadrement">
     <h1>{{ name }}</h1>
     <h4>Etat de la machine :</h4>
-    <div  v-if="!status"><h3 class="red">STATUS KO</h3></div>
-    <div  v-else><h3 class="green">STATUS OK  ⊂(・﹏・⊂)</h3></div>
+    <div  v-if="!status"><h3 class="red">STATUS KO ( º﹃º )</h3></div>
+    <div  v-else><h3 class="green">STATUS OK  (^_<)～☆</h3></div>
     </br>
     <h5>Date de dernier check </h5>
     <h5>{{ checkedAt.toLocaleString('en-GB', { timeZone: 'UTC' }) }}</h5>
