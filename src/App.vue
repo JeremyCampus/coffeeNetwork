@@ -25,13 +25,15 @@ export default {
           id:1,
           name: 'What else ?',
           status: false,
-          checkedAt: new Date()
+          checkedAt: new Date(),
+          position: {lat: 45.0, lng: 5.0}
         },
         {
           id:2,
           name: 'What blabla ?',
           status: true,
-          checkedAt: new Date()
+          checkedAt: new Date(),
+          position: {lat: 45, lng: 5.1}
         }
       ],
       msg: "Yeay",
