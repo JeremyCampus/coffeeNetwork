@@ -26,17 +26,19 @@ export default {
           name: 'What else ?',
           status: false,
           checkedAt: new Date(),
-          position: {lat: 45.0, lng: 5.0}
+          latitude:45.188529,
+          longitude:5.74458,
         },
         {
           id:2,
           name: 'What blabla ?',
           status: true,
           checkedAt: new Date(),
-          position: {lat: 45, lng: 5.1}
+          latitude:45.188529,
+          longitude:5.75158
         }
       ],
-      msg: "Yeay",
+      msg: "CHOOSE YOUR MACHINE",
     }
   },
   methods: {
